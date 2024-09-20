@@ -35,6 +35,7 @@
                             </form>
                             <form action="{{ route('jobs.destroy', $job->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Bist du sicher, dass du diesen Job löschen möchtest?');">
                                 @csrf
+                                @method('DELETE')
                                 <button class="ripbut" type="submit">Löschen</button>
                             </form>
                         </td>
