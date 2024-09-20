@@ -10,12 +10,35 @@
     flex-direction: column;
 }
 
-.seitenname{
-    border: 1px solid green;
+.home-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border: 1px solid black;
+
+}
+
+.search-container{
+
+    display:flex;
+    padding-left: 100px;
+    align-items: center;
+    width: 50vW;
+}
+
+.content-wrapper{
+    display:grid;
+    grid-template-columns: auto auto;
+    border: 1px solid black;
 }
 
 
- /* Add a black background color to the top navigation */
+/* Home Cut-Off */
+.ublu{
+    background-color: var(--bgbl);
+    color: #F8F8F8;
+}
 
  *{
     padding: 0;
@@ -23,42 +46,43 @@
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
-  }
-  body{
+}
+body{
     font-family: "Montserrat", sans-serif;
-  }
+}
 .navbar{
     background: #0082e6;
     height: 80px;
     width: 100%;
-  }
-  label.logo{
+    margin-left: 50%;
+}
+label.logo{
     color: white;
     font-size: 35px;
     line-height: 80px;
     padding: 0 100px;
     font-weight: bold;
-  }
-  nav ul{
+}
+nav ul{
     float: right;
     margin-right: 20px;
-  }
-  nav ul li{
+}
+nav ul li{
     display: inline-block;
     line-height: 80px;
     margin: 0 5px;
-  }
-  nav ul li a{
+}
+nav ul li a{
     color: white;
     font-size: 17px;
     padding: 7px 13px;
     border-radius: 3px;
     text-transform: uppercase;
-  }
-  a.active,a:hover{
+}
+a.active,a:hover{
     background: var(--bgbl);
     transition: .5s;
-  }
+}
   .checkbtn{
     font-size: 30px;
     color: white;
@@ -232,7 +256,7 @@
 
 /* Button */
 .ripbut {
-    background-color: white;
+    background-color: #F8F8F8;
     border: none;
     color: black;
     padding: 16px 32px;
@@ -245,7 +269,7 @@
 
 .ripbut:hover {
     background-color: var(--hvbt);
-    color: white;
+    color: #F8F8F8;
 }
 
 .all{
@@ -257,7 +281,7 @@
     display:flex;
     flex-direction: column;
     align-items: stretch;
-
+    box-shadow: 0px 35px 50px rgba(0, 0, 0, 0.2);
     margin: 15rem;
 }
 
@@ -265,63 +289,63 @@
 
 
  /* Style inputs, select elements and textareas */
- input[type=text], select, textarea{
+input[type=text], select, textarea{
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
     resize: vertical;
-  }
+}
 
   /* Style the label to display next to the inputs */
-  label {
+label {
     padding: 12px 12px 12px 0;
     display: inline-block;
     background-color: var(--bgbl);
     color: white;
     text-align: center;
     box-shadow: 0px 35px 50px rgba(0, 0, 0, 0.2);
-  }
+}
 
   /* Style the submit button */
-  input[type=submit] {
-    background-color: #04AA6D;
+input[type=submit] {
+    background-color: var(--bgbl);
     color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     float: right;
-  }
+}
 
   /* Style the container */
-  .new-container {
+.new-container {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 5rem;
-  }
+}
 
   /* Floating column for labels: 25% width */
-  .col-25 {
+.col-25 {
     float: left;
     width: 25%;
     margin-top: 6px;
-  }
+}
 
   /* Floating column for inputs: 75% width */
-  .col-75 {
+.col-75 {
     float: left;
     width: 75%;
     margin-top: 6px;
-  }
+}
 
   /* Clear floats after the columns */
-  .row:after {
+.row:after {
     content: "";
     display: table;
     clear: both;
-  }
+}
 
   /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
   @media screen and (max-width: 600px) {
@@ -330,3 +354,28 @@
       margin-top: 0;
     }
   }
+
+
+.show-wrapper{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    margin: 0 auto;
+    margin-top: 50px;;
+
+
+    background: #F2F2F2;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 2px #fff inset,
+                -1px -1px 2px #fff inset;
+    border-radius: 3px/6px;
+
+}
+
+.show-p-container{
+    text-align: center;
+}
+
+
