@@ -164,6 +164,14 @@
                         <input type="password" name="password" placeholder="Passwort" required>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="role">Rolle</label>
+                    </div>
+                    <div>
+                        <input type="text" name="role" placeholder="Rolle" required>
+                    </div>
+                </div>
                 <button class="ripbut" type="submit">User Hinzufügen</button>
             </form>
         </div>

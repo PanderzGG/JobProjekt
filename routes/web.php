@@ -5,7 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -44,3 +44,7 @@ Route::delete('/categories/{id}', [CategoryController::class,'destroy'])->name('
 Route::get('/profile', [UserController::class, 'profile'])->name('user.profile');
 Route::get('/my-jobs', [UserController::class, 'myJobs'])->name('user.my-jobs');
 Route::post('/user', [UserController::class,'store'])->name('user.store');
+//LoginController
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class,'login'])->name('login.post');
+Route::post('/logout', [LoginController::class,'logout'])->name('logout');

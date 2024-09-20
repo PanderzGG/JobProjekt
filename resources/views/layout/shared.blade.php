@@ -15,7 +15,7 @@
                 <nav class="navbar">
                     <input type="checkbox" id="check">
                     <label for="check" class="checkbtn">
-                      <i class="fas fa-bars"></i>
+                        <i class="fas fa-bars"></i>
                     </label>
                     <label class="logo">Stellenanzeigen24.de</label>
                     <ul>
@@ -32,13 +32,31 @@
                             <a href="{{ route('categories.index') }}">Kategorien</a>
                         </li>
                         <li class="{{ Route::currentRouteName() == 'user.profile' ? 'active' : '' }}">
-                            <a href="{{ route('user.profile') }}">Admin</a>
+                            @if (auth()->check())
+                                <!-- Der Benutzer ist eingeloggt, linke zur Profilseite -->
+                                <a href="{{ route('user.profile') }}">Profil</a>
+                            @else
+                                <!-- Der Benutzer ist nicht eingeloggt, leite zur Login-Seite -->
+                                <a href="{{ route('login') }}">Login</a>
+                            @endif
                         </li>
+                        @if(auth()->check())
+                            <!-- Logout-Button, sichtbar nur für eingeloggte Benutzer -->
+                            <li>
+                                <a href="{{ route('logout') }}"
+                                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </li>
+                        @endif
                     </ul>
-
-                  </nav>
+                </nav>
             </div>
         </div>
+
     </header>
     <div id="page-container">
         <div id="content-wrap">

@@ -1,22 +1,41 @@
 @extends('layout.shared')
 
 @section('content')
-    <form action="{{ route('login') }}" method="POST">
-        @csrf
-        <label for="email">E-Mail:</label>
-        <input type="email" id="email" name="email" required>
-        <br>
-        <label for="password">Passwort:</label>
-        <input type="password" id="password" name="password" required>
-        <br>
-        <button type="submit">Anmelden</button>
-    </form>
+<h1>Login</h1>
+<form action="{{ route('login.post') }}" method="POST">
+    @csrf
+    <div>
+        <label for="email">E-Mail-Adresse</label>
+        <input type="email" name="email" id="email" required value="{{ old('email') }}">
+        @error('email')
+            <span class="error">{{ $message }}</span>
+        @enderror
+    </div>
 
-    @if ($errors->any())
-        <div>
+    <div>
+        <label for="password">Passwort</label>
+        <input type="password" name="password" id="password" required>
+        @error('password')
+            <span class="error">{{ $message }}</span>
+        @enderror
+    </div>
+
+    <button type="submit">Login</button>
+</form>
+
+<!-- Erfolgsmeldungen -->
+@if (session('success'))
+    <div class="success">{{ session('success') }}</div>
+@endif
+
+<!-- Fehlernachrichten -->
+@if ($errors->any())
+    <div class="error">
+        <ul>
             @foreach ($errors->all() as $error)
-                <p>{{ $error }}</p>
+                <li>{{ $error }}</li>
             @endforeach
-        </div>
-    @endif
+        </ul>
+    </div>
+@endif
 @endsection
